@@ -66,7 +66,7 @@ class JournalsController < ApplicationController
       render json: {
           status: "Success",
           message: "Journal deleted.",
-      }, status: 204
+      }, status: :ok
     else
       render json: {
           status: "Error",

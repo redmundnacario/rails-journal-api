@@ -88,7 +88,7 @@ class TasksController < ApplicationController
       render json: {
                     status: "Success",
                     message: "Task deleted.",
-                    }, status: 204
+                    }, status: :ok
     else
       render json: {
                     status: "Error",

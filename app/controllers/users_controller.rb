@@ -56,12 +56,12 @@ class UsersController < ApplicationController
         @user.destroy
         render json: {
             status: "Success",
-            message: "Journal deleted.",
-        }, status: 204
+            message: "User deleted.",
+        }, status: :ok
       else
         render json: {
             status: "Error",
-            message: "Journal not deleted.",
+            message: "User not deleted.",
         }, status: :unprocessable_entity
       end
     end
