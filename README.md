@@ -4,7 +4,7 @@ created by:
 
 ## Redmund Nacario
 
-### Note: `Testing scripts were intentionally not included in this repo.`
+### Note: `Testing scripts were intentionally not included in this repository.`
 
 ---
 
@@ -46,4 +46,22 @@ created by:
 
 * Deployment instructions
 
-    Deployment in Heroku
+    Deployment in Heroku:
+
+    1. Create heroku app on its website.
+   
+    2. cd into Rails App folder from the root folder that is pushed to your repo
+
+    3. `heroku git remote -a <app name in heroku>`
+
+    4. `git push heroku master`
+
+    5. Don’t forget to migrate your database to Heroku with `heroku run rake db:migrate`. Run this command while in Rails API project folder.
+
+    6. If you have any environment variables set in your .env file that is added to git ignore file, set them up on Heroku by going to your applicatoin Dashboard -> Settings -> Config Variables.
+
+    sources: 
+    
+    * https://medium.com/@nothingisfunny/deploying-rails-api-and-react-app-to-heroku-from-a-single-github-repo-7d8597abc55a
+
+    * https://devcenter.heroku.com/articles/getting-started-with-rails6
