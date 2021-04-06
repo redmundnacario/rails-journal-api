@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_many :journals
+    has_many :journals, dependent: :destroy
     has_many :tasks, through: :journals
 end
