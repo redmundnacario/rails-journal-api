@@ -7,9 +7,16 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       if @user.valid?
         token = encode_token({user_id: @user.id})
-        render json: {user: @user, token: token}
+        render json: {
+          data: @user,
+          message: "Account created.",
+          status: "Success",
+          token: token
+        }
       else
-        render json: {error: "Invalid email or password"}, status: :unprocessable_entity
+        render json: {
+          message: "Invalid email or password",
+          status: "Error"}, status: :unprocessable_entity
       end
     end
   
@@ -19,18 +26,27 @@ class UsersController < ApplicationController
   
       if @user && @user.authenticate(params[:password])
         token = encode_token({user_id: @user.id})
-        render json: {user: @user, token: token}
+        render json: {
+          data: @user,
+          message: "User successfully logged in.",
+          status: "Success",
+          token: token
+        }
       else
-        render json: {error: "Invalid email or password"}, status: :unprocessable_entity
+        render json: {
+          message: "Invalid email or password",
+          status:"Error"}, status: :unprocessable_entity
       end
     end
   
   
     def auto_login
-      render json: @user
+      render json: {
+        data: @user
+      }
     end
 
-    # PATCH or PUT /users/1
+    # PATCH or PUT /user
     def update
       # check_user 
       if @user.update(user_params)
@@ -48,7 +64,7 @@ class UsersController < ApplicationController
       end
     end
 
-    # DELETE /users/1
+    # DELETE /user
     def destroy
       # auto_login
       # check_user
