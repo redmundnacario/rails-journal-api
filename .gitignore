@@ -26,8 +26,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/test/controllers
-/test/models
+# /test/controllers
+# /test/models
 /config/database.yml
 # Ignore application configuration
 /config/application.yml

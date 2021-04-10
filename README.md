@@ -4,8 +4,6 @@ created by:
 
 ## Redmund Nacario
 
-### Note: `Testing scripts were intentionally not included in this repository.`
-
 ---
 
 # Important informations
