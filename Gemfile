@@ -49,3 +49,8 @@ gem 'rack-cors'
 gem 'jwt'
 # setting env variables
 gem 'figaro'
+
+group :test do
+  gem 'rspec-rails'  
+  gem 'shoulda-matchers'
+end

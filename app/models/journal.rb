@@ -1,6 +1,6 @@
 class Journal < ApplicationRecord
     validates :title, :description, presence:true
-    validates :description, length: { minimum: 50 }
+    validates :description, length: { minimum: 10 }
 
     belongs_to :user
     has_many :tasks, dependent: :destroy

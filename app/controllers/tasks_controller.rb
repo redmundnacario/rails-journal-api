@@ -35,6 +35,17 @@ class TasksController < ApplicationController
                   }, status: :ok
   end
 
+  def get_tasks_today_by_journal_id
+    @tasks = Task.where({journal_id: params[:id], user_id: @user.id, deadline: Date.today.iso8601})
+    # ,'start BETWEEN ? AND ?', Date.today.prev_day.iso8601, Date.today.next_day.iso8601
+    render json: {
+                  status: "Success",
+                  message: "Tasks loaded.",
+                  data: @tasks
+                  }, status: :ok
+  end
+
+
   # GET /tasks/1
   def show
     render json: {

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   match '/tasks/journal/:id' => "tasks#get_tasks_by_journal_id", via: [:get], as: :get_tasks_by_journal_id
+  match '/today/tasks/journal/:id' => "tasks#get_tasks_today_by_journal_id", via: [:get], as: :get_tasks_today_by_journal_id
   match '/today/tasks' => "tasks#get_tasks_today", via: [:get], as: :get_tasks_today
 
   resources :journals
